@@ -1,0 +1,130 @@
+/* Container styling to ensure it clears the fixed header */
+.contact-container {
+  max-width: 640px;
+  margin: 140px auto 40px; /* Increased top margin to clear header (approx. 100px logo + padding) */
+  padding: 2.5rem;
+  background-color: var(--card-background); /* Matches header's card background */
+  border: 1px solid var(--border-color); /* Consistent with header's border */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Matches header shadow */
+  z-index: 5; /* Lower than header's z-index: 1000 */
+  position: relative;
+}
+
+/* Header text styling */
+.contact-container h2 {
+  text-align: center;
+  color: var(--text-primary); /* White text for consistency */
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-sans);
+  letter-spacing: -0.025em;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Form field containers */
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+label {
+  font-size: 0.95rem;
+  color: var(--text-secondary); /* Lighter text for labels */
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-sans);
+}
+
+/* Input and textarea styling */
+input,
+textarea {
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.1); /* Matches header search field */
+  font-family: var(--font-family-sans);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color); /* #00bfff for focus */
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 8px rgba(0, 191, 255, 0.3); /* Matches header search focus */
+}
+
+/* Textarea specific styling */
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  max-height: 300px;
+}
+
+/* Button styling */
+button {
+  padding: var(--spacing-md);
+  background: linear-gradient(90deg, #4b5563, #d1d5db); /* Matches action-button gradient */
+  color: #000000;
+  border: 2px solid var(--primary-color); /* #a0a0a0 border */
+  border-radius: 50px; /* Matches action-button */
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-sans);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #374151, #9ca3af); /* Matches action-button hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3);
+}
+
+button:active {
+  transform: scale(1);
+  box-shadow: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .contact-container {
+    margin: 120px auto 30px; /* Adjusted for smaller header on mobile */
+    padding: var(--spacing-md);
+  }
+
+  .contact-container h2 {
+    font-size: 1.7rem;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 0.95rem;
+    padding: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    margin: 100px auto 20px; /* Further adjusted for smaller screens */
+    padding: var(--spacing-sm);
+  }
+
+  .contact-container h2 {
+    font-size: 1.5rem;
+  }
+}
